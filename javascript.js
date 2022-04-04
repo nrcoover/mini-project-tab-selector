@@ -75,7 +75,6 @@ function activateLanguageToggle() {
         // Tab Content
         document.querySelector('#English-Display').style.display = 'none';
         document.querySelector('#Spanish-Display').style.display = 'block';
-        
     } else {
         // Dark Mode Toggle Components
         document.querySelector('#Toggle-Dark-Mode h3').innerHTML = 'Toggle Dark Mode';
@@ -91,6 +90,7 @@ function activateLanguageToggle() {
         document.querySelector('#Spanish-Display').style.display = 'none';
         document.querySelector('#English-Display').style.display = 'block';
     }
+    document.getElementsByClassName('tab-active')[0].click();
     console.log(document.getElementsByClassName('show-active'));
 }
 
