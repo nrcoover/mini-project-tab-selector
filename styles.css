@@ -26,8 +26,39 @@ html, body {
     width: 100%;
 }
 
-/* RECOMMENDED: BEGIN WITH MOBILE FIRST DESIGN */
+main {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}
 
+.container {
+    border: 1px solid black;
+    height: 50%;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.selector {
+    background-color: lightgrey;
+    border-bottom: 1px solid grey;
+    display: flex;
+}
+
+.tab {
+    padding: 10px;
+}
+
+.tab:hover {
+    background-color: darkgrey;
+    cursor: pointer;
+}
+
+.content {
+    padding: 10px;
+}
 
 
 
