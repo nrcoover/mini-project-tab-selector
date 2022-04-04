@@ -16,6 +16,7 @@ var darkPrimaryDark = '#3700B3';
 var darkSecondary = '#03DAC6';
 var darkErrorColor = '#CF6679';
 
+// CHANGES LIGHT THEME COLORS TO DARK THEME COLROS
 function turnOnDarkModeColors() {
     if (darkModetoggleIsOn === true) {
         document.body.style.transition = 'color 1s, background-color 1s';

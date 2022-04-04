@@ -168,6 +168,10 @@ body, article, section, section > *, .toggle-dot, .selector {
     display: none;
 }
 
+.content-body h4 {
+    margin: .5em 0 1rem 0;
+}
+
 .show-active {
     animation: fade-in 1s;
     display: block;
