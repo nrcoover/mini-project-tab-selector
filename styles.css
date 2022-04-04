@@ -20,6 +20,7 @@
     /* DARK THEME COLORS */
     --dark-theme-base: #1d1d1d;
     --dark-theme-background: #121212;
+    --dark-theme-shadow: rgba(255, 255, 255, .3);
     --dark-theme-primary: #BB86FC;
     --dark-theme-primary-dark: #3700B3;
     --dark-theme-secondary: #03DAC6;
@@ -44,7 +45,6 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
-    transition: background-color 1s ease;
 }
 
 main {
@@ -61,6 +61,10 @@ main {
 article {
     max-width: 40rem;
     margin: 1.5rem auto;
+}
+
+body, article, section, section > * {
+    transition: background-color 1s;
 }
 
 #Toggle-Switches-Container {
@@ -142,6 +146,7 @@ article {
     height: 3em;
     justify-content: center;
     padding: 10px;
+    transition: color 1s;
     width: 27%;
 }
 
@@ -165,6 +170,7 @@ article {
 
 .tab-active {
     background-color: var(--light-theme-secondary-dark);
+    transition: color 1s;
 }
 
 @keyframes fade-in {
