@@ -66,12 +66,21 @@ main {
 
 .show-active {
     display: block;
+    animation: fade-in 1s;
 }
 
 .tab-active {
     background-color: darkgrey;
 }
 
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 
 /* MEDIA QUERY TEMPLATE FROM https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
 
