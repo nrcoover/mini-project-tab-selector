@@ -95,8 +95,9 @@ article {
     border: 2px solid var(--light-theme-primary-dark);
     border-radius: 35px;
     box-shadow: 1px 1px 5px var(--light-theme-shadow);
-    width: 3.5em;
+    display: flex;
     margin: .5em 1.25em;
+    width: 3.5em;
 }
 
 .toggle-dot {
@@ -106,6 +107,10 @@ article {
     border-radius: 35px;
     height: 1.5em;
     width: 1.5em;
+}
+
+.toggle-is-active {
+    justify-content: flex-end;
 }
 
 .container {
