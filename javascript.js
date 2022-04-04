@@ -21,17 +21,30 @@
             el.classList.add('tab-active');
         }
 
+        function turnOnDarkModeColors() {
+            if (darkModetoggleIsOn === true) {
+                console.log("HE HE HE");
+                document.documentElement.style.setProperty('--light-theme-base', '#1d1d1d');
+            } else {
+                console.log("SHE SHE SHE");
+                document.documentElement.style.setProperty('--light-theme-base', '#bdbdbd');
+            }
+        }
+
         // DARK MODE TOGGLE FUNCTIONALITY
         var darkModeSwitch = document.querySelector('#Dark-Mode-Switch');
         var darkModetoggleIsOn = false;
         darkModeSwitch.addEventListener('click', function() {
             if (darkModetoggleIsOn === false) {
-                darkModeSwitch.classList.add('toggle-is-active');
-                return darkModetoggleIsOn = true;
+                darkModeSwitch.style.justifyContent = 'flex-end';
+                darkModetoggleIsOn = true;
             } else {
-                darkModeSwitch.classList.remove('toggle-is-active');
-                return darkModetoggleIsOn = false;
+                darkModeSwitch.style.justifyContent = 'flex-start';
+                ;
+                darkModetoggleIsOn = false;
             }
+            turnOnDarkModeColors();
+            return darkModetoggleIsOn;
         });
 
         // LANGUAGE TOGGLE FUNCTIONALITY
