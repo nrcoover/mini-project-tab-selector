@@ -1,4 +1,4 @@
-// global variable declerations
+// LIGHT THEME COLOR VARIABLES
 var lightBase = '#bdbdbd';
 var lightBackground = '#FFFFFF';
 var lightShadow = 'rgba(18, 18, 18, .3)';
@@ -7,7 +7,7 @@ var lightPrimaryDark = '#3700B3';
 var lightSecondary = '#03DAC6';
 var lightSecondaryDark = '#018786';
 var lightErrorColor = '#B00020';
-/* DARK THEME COLORS */
+// DARK THEME COLOR VARIABLES
 var darkBase = '#1d1d1d';
 var darkBackground = '#121212';
 var darkShadow = 'rgba(255, 255, 255, .1)'
@@ -48,12 +48,46 @@ darkModeSwitch.addEventListener('click', function() {
         darkModetoggleIsOn = true;
     } else {
         darkModeSwitch.style.justifyContent = 'flex-start';
-        ;
         darkModetoggleIsOn = false;
     }
     turnOnDarkModeColors();
     return darkModetoggleIsOn;
 });
+
+// CHANGES ENGLISH TEXT TO SPANISH TEXT
+function activateLanguageToggle() {
+    if (languagetoggleIsOn === true) {
+        // Dark Mode Toggle Components
+        document.querySelector('#Toggle-Dark-Mode h3').innerHTML = 'Alternar modo oscuro';
+        document.querySelector('#Toggle-Dark-Mode p:first-child').innerHTML = 'Apagado';
+        document.querySelector('#Toggle-Dark-Mode p:last-child').innerHTML = 'En';
+        // Toggle Language Components
+        document.querySelector('#Toggle-Language h3').innerHTML = 'Alternar idioma';
+        // Tab Selectors
+        document.querySelector('#Tab-1').innerHTML = 'Opción Uno';
+        document.querySelector('#Tab-2').innerHTML = 'Opción Dos';
+        document.querySelector('#Tab-3').innerHTML = 'Opción Tres';
+        // Tab Content
+        document.querySelector('#English-Display').style.display = 'none';
+        document.querySelector('#Spanish-Display').style.display = 'block';
+        setNewActive();
+    } else {
+        // Dark Mode Toggle Components
+        document.querySelector('#Toggle-Dark-Mode h3').innerHTML = 'Toggle Dark Mode';
+        document.querySelector('#Toggle-Dark-Mode p:first-child').innerHTML = 'Off';
+        document.querySelector('#Toggle-Dark-Mode p:last-child').innerHTML = 'On';
+        // Toggle Language Components
+        document.querySelector('#Toggle-Language h3').innerHTML = 'Toggle Language';
+        // Tab Selectors
+        document.querySelector('#Tab-1').innerHTML = 'Option One';
+        document.querySelector('#Tab-2').innerHTML = 'Option Two';
+        document.querySelector('#Tab-3').innerHTML = 'Option Three';
+        // Tab Content
+        document.querySelector('#English-Display').style.display = 'block';
+        document.querySelector('#Spanish-Display').style.display = 'none';
+        setNewActive();
+    }
+}
 
 // LANGUAGE TOGGLE FUNCTIONALITY
 var languageSwitch = document.querySelector('#Language-Switch');
@@ -61,23 +95,22 @@ var languagetoggleIsOn = false;
 languageSwitch.addEventListener('click', function() {
     if (languagetoggleIsOn === false) {
         languageSwitch.classList.add('toggle-is-active');
-        return languagetoggleIsOn = true;
+        languagetoggleIsOn = true;
     } else {
         languageSwitch.classList.remove('toggle-is-active');
-        return languagetoggleIsOn = false;
+        languagetoggleIsOn = false;
     }
+    activateLanguageToggle();
+    return languagetoggleIsOn;
 });
 
 // function to remove .show-active class & add to clicked
 var tabs = document.getElementsByClassName('tab');
 function setNewActive(el) {
-    // select all .content-body
     var contentBodies = document.getElementsByClassName('content-body');
-    // remove .show-active
     for (var contentBody of contentBodies) {
         contentBody.classList.remove('show-active');
     }
-    // add .show-active (back) to clicked
     document.getElementById(el.textContent.trim()).classList.add('show-active');
 
     for (var tab of tabs) {
@@ -85,7 +118,6 @@ function setNewActive(el) {
     }
     el.classList.add('tab-active');
 }
-
 
 // select .tab class, and loop through
 for (var tab of tabs) {

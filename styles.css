@@ -82,6 +82,14 @@ body, article, section, section > *, .toggle-dot, .selector {
     width: 48%;
 }
 
+#English-Display {
+    display: block;
+}
+
+#Spanish-Display {
+    display: none;
+}
+
 .panel-element {
     background-color: var(--light-theme-background);
     box-shadow: 2px 2px 5px var(--light-theme-shadow);
