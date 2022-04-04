@@ -11,6 +11,7 @@
     /* LIGHT THEME COLORS */
     --light-theme-base: #bdbdbd;
     --light-theme-background: #FFFFFF;
+    --light-theme-shadow: rgba(18, 18, 18, .3);
     --light-theme-primary: #6200EE;
     --light-theme-primary-dark: #3700B3;
     --light-theme-secondary: #03DAC6;
@@ -39,6 +40,7 @@ html, body {
 
 body {
     align-items: center;
+    background-color: var(--light-theme-base);
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat', sans-serif;
@@ -50,21 +52,35 @@ main {
     flex-direction: column;
     height: 100vh;
     justify-content: center;
+    max-width: 50em;
+    min-width: 480px;
     width: 100%;
-    max-width: 40em;
+}
+
+article {
+    max-width: 40rem;
+    margin: 1.5rem auto;
 }
 
 #Toggle-Switches-Container {
     align-items: center;
     display: flex;
     flex-direction: row;
-
-    background-color: pink;
+    justify-content: space-between;
+    width: 100%;
 }
 
 #Toggle-Switches-Container section {
+    border-radius: 10px;
     text-align: center;
-    margin: 3em;
+    padding: 2em;
+    width: 48%;
+}
+
+.panel-element {
+    background-color: var(--light-theme-background);
+    box-shadow: 2px 2px 5px var(--light-theme-shadow);
+
 }
 
 .toggle-contents-wrapper {
@@ -75,15 +91,15 @@ main {
 }
 
 .toggle-wrapper {
-    background-color: red;
-    border: 2px solid black;
+    background-color: var(--light-theme-primary-dark);
+    border: 2px solid var(--light-theme-primary-dark);
     border-radius: 35px;
     width: 3.5em;
     margin: .5em 1.25em;
 }
 
 .toggle-dot {
-    background-color: green;
+    background-color: var(--light-theme-secondary-dark);
     margin: 2px;
     border-radius: 35px;
     height: 1.5em;
@@ -91,29 +107,42 @@ main {
 }
 
 .container {
-    border: 1px solid black;
+    border-radius: 15px;
     height: 50%;
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
 .selector {
-    background-color: lightgrey;
-    border-bottom: 1px solid grey;
+    align-items: center;
+    background-color: var(--light-theme-primary-dark);
+    border-radius: 15px 15px 0 0;
     display: flex;
+    height: 5em;
+    justify-content: space-around;
+    text-align: center;
 }
 
 .tab {
+    align-items: center;
+    background-color: var(--light-theme-primary);
+    border-radius: 8px;
+    box-shadow: 2px 2px 3px var(--light-theme-shadow);
+    color: var(--light-theme-background);
+    display: flex;
+    height: 3em;
+    justify-content: center;
     padding: 10px;
+    width: 27%;
 }
 
 .tab:hover {
-    background-color: grey;
+    background-color: var(--light-theme-secondary-dark);
     cursor: pointer;
 }
 
 .content {
-    padding: 10px;
+    padding: 1.5em;
 }
 
 .content-body {
@@ -121,12 +150,12 @@ main {
 }
 
 .show-active {
-    display: block;
     animation: fade-in 1s;
+    display: block;
 }
 
 .tab-active {
-    background-color: darkgrey;
+    background-color: var(--light-theme-secondary-dark);
 }
 
 @keyframes fade-in {
