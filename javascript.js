@@ -16,24 +16,6 @@ var darkPrimaryDark = '#3700B3';
 var darkSecondary = '#03DAC6';
 var darkErrorColor = '#CF6679';
 
-// function to remove .show-active class & add to clicked
-var tabs = document.getElementsByClassName('tab');
-function setNewActive(el) {
-    // select all .content-body
-    var contentBodies = document.getElementsByClassName('content-body');
-    // remove .show-active
-    for (var contentBody of contentBodies) {
-        contentBody.classList.remove('show-active');
-    }
-    // add .show-active (back) to clicked
-    document.getElementById(el.textContent.trim()).classList.add('show-active');
-
-    for (var tab of tabs) {
-        tab.classList.remove('tab-active');
-    }
-    el.classList.add('tab-active');
-}
-
 function turnOnDarkModeColors() {
     if (darkModetoggleIsOn === true) {
         document.body.style.transition = 'color 1s, background-color 1s';
@@ -84,6 +66,25 @@ languageSwitch.addEventListener('click', function() {
         return languagetoggleIsOn = false;
     }
 });
+
+// function to remove .show-active class & add to clicked
+var tabs = document.getElementsByClassName('tab');
+function setNewActive(el) {
+    // select all .content-body
+    var contentBodies = document.getElementsByClassName('content-body');
+    // remove .show-active
+    for (var contentBody of contentBodies) {
+        contentBody.classList.remove('show-active');
+    }
+    // add .show-active (back) to clicked
+    document.getElementById(el.textContent.trim()).classList.add('show-active');
+
+    for (var tab of tabs) {
+        tab.classList.remove('tab-active');
+    }
+    el.classList.add('tab-active');
+}
+
 
 // select .tab class, and loop through
 for (var tab of tabs) {
