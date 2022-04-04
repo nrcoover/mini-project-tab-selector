@@ -94,12 +94,14 @@ article {
     background-color: var(--light-theme-primary-dark);
     border: 2px solid var(--light-theme-primary-dark);
     border-radius: 35px;
+    box-shadow: 1px 1px 5px var(--light-theme-shadow);
     width: 3.5em;
     margin: .5em 1.25em;
 }
 
 .toggle-dot {
     background-color: var(--light-theme-secondary-dark);
+    box-shadow: 1px 1px 3px var(--light-theme-shadow);
     margin: 2px;
     border-radius: 35px;
     height: 1.5em;
