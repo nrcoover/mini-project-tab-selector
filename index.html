@@ -23,15 +23,15 @@
                 </div>
             </section>
             <section class="content">
-                <div class="content-body show-active">
+                <div id="Shirts" class="content-body show-active">
                     <h4>Shirts</h4>
                     <p>Our shirts are all of the highest quality!</p>
                 </div>
-                <div class="content-body">
+                <div id="Slacks" class="content-body">
                     <h4>Slacks</h4>
                     <p>All slacks can be custom tailored upon request.</p>
                 </div>
-                <div class="content-body">
+                <div id="Shoes" class="content-body">
                     <h4>Shoes</h4>
                     <p>Shoes are all US sized unless indicated otherwise.</p>
                 </div>
@@ -39,7 +39,37 @@
         </article>
     </main>
     <script>
+        // function to remove .show-active class & add to clicked
+        console.log('hello');
+        
+        function setNewActive(el) {
+            var contentBodies = document.getElementsByClassName('content-body');
+            // select all .content-body
+            // remove .show-active
+            console.log(contentBodies);
+            for (var contentBody of contentBodies) {
+                contentBody.classList.remove('show-active');
+            }
+            // add .show-active (back) to clicked
+            document.getElementById(el.textContent.trim()).classList.add('show-active');
 
+            var tabs = document.getElementsByClassName('tab');
+            for (var tab of tabs) {
+                tab.classList.remove('tab-active');
+            }
+            el.classList.add('tab-active');
+        }
+
+        // select .tab class, and loop through
+        var tabs = document.getElementsByClassName('tab');
+        for (var tab of tabs) {
+
+            // add click listener to each tab
+            tab.addEventListener('click', function(e) {
+              setNewActive(e.currentTarget);
+              console.log(e.currentTarget);
+            });
+        }
     </script>
 </body>
 </html>
