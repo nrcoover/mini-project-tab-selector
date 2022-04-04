@@ -52,7 +52,7 @@ main {
 }
 
 .tab:hover {
-    background-color: darkgrey;
+    background-color: grey;
     cursor: pointer;
 }
 
@@ -64,8 +64,12 @@ main {
     display: none;
 }
 
-.show-by-default {
+.show-active {
     display: block;
+}
+
+.tab-active {
+    background-color: darkgrey;
 }
 
 
