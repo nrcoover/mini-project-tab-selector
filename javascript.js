@@ -16,6 +16,13 @@ var darkPrimaryDark = '#3700B3';
 var darkSecondary = '#03DAC6';
 var darkErrorColor = '#CF6679';
 
+// GLOBAL VARIABLES
+var darkModeSwitch = document.querySelector('#Dark-Mode-Switch');
+var darkModetoggleIsOn = false;
+var languageSwitch = document.querySelector('#Language-Switch');
+var languagetoggleIsOn = false;
+var tabs = document.getElementsByClassName('tab');
+
 // CHANGES LIGHT THEME COLORS TO DARK THEME COLROS
 function turnOnDarkModeColors() {
     if (darkModetoggleIsOn === true) {
@@ -40,8 +47,6 @@ function turnOnDarkModeColors() {
 }
 
 // DARK MODE TOGGLE FUNCTIONALITY
-var darkModeSwitch = document.querySelector('#Dark-Mode-Switch');
-var darkModetoggleIsOn = false;
 darkModeSwitch.addEventListener('click', function() {
     if (darkModetoggleIsOn === false) {
         darkModeSwitch.style.justifyContent = 'flex-end';
@@ -70,7 +75,7 @@ function activateLanguageToggle() {
         // Tab Content
         document.querySelector('#English-Display').style.display = 'none';
         document.querySelector('#Spanish-Display').style.display = 'block';
-        setNewActive();
+        
     } else {
         // Dark Mode Toggle Components
         document.querySelector('#Toggle-Dark-Mode h3').innerHTML = 'Toggle Dark Mode';
@@ -83,15 +88,13 @@ function activateLanguageToggle() {
         document.querySelector('#Tab-2').innerHTML = 'Option Two';
         document.querySelector('#Tab-3').innerHTML = 'Option Three';
         // Tab Content
-        document.querySelector('#English-Display').style.display = 'block';
         document.querySelector('#Spanish-Display').style.display = 'none';
-        setNewActive();
+        document.querySelector('#English-Display').style.display = 'block';
     }
+    console.log(document.getElementsByClassName('show-active'));
 }
 
 // LANGUAGE TOGGLE FUNCTIONALITY
-var languageSwitch = document.querySelector('#Language-Switch');
-var languagetoggleIsOn = false;
 languageSwitch.addEventListener('click', function() {
     if (languagetoggleIsOn === false) {
         languageSwitch.classList.add('toggle-is-active');
@@ -105,7 +108,6 @@ languageSwitch.addEventListener('click', function() {
 });
 
 // function to remove .show-active class & add to clicked
-var tabs = document.getElementsByClassName('tab');
 function setNewActive(el) {
     var contentBodies = document.getElementsByClassName('content-body');
     for (var contentBody of contentBodies) {
