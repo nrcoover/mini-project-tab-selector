@@ -19,11 +19,17 @@
 html, body {
     background-color: var(--theme-color-white);
     font-family: "Montserrat";
-    font-size: 14px;
+    font-size: 18px;
     height: 100%;
     min-height: 100vh;
     min-width: 100%;
     width: 100%;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
@@ -32,6 +38,44 @@ main {
     flex-direction: column;
     height: 100vh;
     justify-content: center;
+    width: 100%;
+    max-width: 40em;
+}
+
+#Toggle-Switches-Container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+
+    background-color: pink;
+}
+
+#Toggle-Switches-Container section {
+    text-align: center;
+    margin: 3em;
+}
+
+.toggle-contents-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-wrapper {
+    background-color: red;
+    border: 2px solid black;
+    border-radius: 35px;
+    width: 3.5em;
+    margin: .5em 1.25em;
+}
+
+.toggle-dot {
+    background-color: green;
+    margin: 2px;
+    border-radius: 35px;
+    height: 1.5em;
+    width: 1.5em;
 }
 
 .container {
