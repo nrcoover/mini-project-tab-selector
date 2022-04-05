@@ -54,6 +54,7 @@ main {
     height: 100vh;
     justify-content: center;
     max-width: 50em;
+    min-height: 700px;
     min-width: 480px;
     width: 100%;
 }
@@ -93,13 +94,13 @@ body, article, section, section > *, .toggle-dot, .selector {
 .panel-element {
     background-color: var(--light-theme-background);
     box-shadow: 2px 2px 5px var(--light-theme-shadow);
-
+    min-width: 12rem;
 }
 
 .toggle-contents-wrapper {
+    align-items: center;
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: center;
 }
 
@@ -112,6 +113,7 @@ body, article, section, section > *, .toggle-dot, .selector {
     justify-content: flex-start;
     margin: .5em 1.25em;
     width: 3.5em;
+    min-width: 3.5em;
 }
 
 .toggle-dot {
