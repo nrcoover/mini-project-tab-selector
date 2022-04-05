@@ -53,7 +53,7 @@ main {
     flex-direction: column;
     height: 100vh;
     justify-content: center;
-    max-width: 50em;
+    max-width: 37em;
     min-height: 700px;
     min-width: 480px;
     width: 100%;
@@ -201,29 +201,32 @@ body, article, section, section > *, .toggle-dot, .selector {
     }
 }
 
-/* MEDIA QUERY TEMPLATE FROM https://www.w3schools.com/css/css_rwd_mediaqueries.asp */
-
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    body {
+        font-size: 12px;
+    }
 
+    main {
+        min-width: 20em;
+    }
+
+    #Toggle-Switches-Container {
+        flex-direction: column;
+        min-height: 19em;
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
+    body {
+        font-size: 14px;
+    }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-
+    body {
+        font-size: 16px;
+    };
 }
